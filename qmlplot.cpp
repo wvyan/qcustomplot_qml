@@ -51,6 +51,7 @@ void CustomPlotItem::paint( QPainter* painter )
         QCPPainter qcpPainter( &picture );
 
         m_CustomPlot->toPainter( &qcpPainter );
+        setRenderTarget(QQuickPaintedItem::FramebufferObject);
 
         painter->drawPixmap( QPoint(), picture );
     }
